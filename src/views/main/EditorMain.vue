@@ -7,7 +7,7 @@ import {
   // onMounted,
   watch
 } from 'vue'
-
+// import Bezier from '@/utils/Bezier.js'
 
 const animation = reactive({
   alternate: false,
@@ -60,6 +60,8 @@ watch(animation, (val) => {
 //   sheet && sheet.insertRule(keyFrameText, 0)
 // }
 // console.log(animationString, insertStyleSheetRule('123'));
+
+
 
 
 
@@ -142,18 +144,24 @@ header {
       min-height: 30rem;
       height: 100%;
       border-radius: .875rem;
-      background-color: #969ca563;
       display: flex;
       perspective: 50rem;
+      background:
+        -webkit-linear-gradient(top, transparent calc(2.5rem - .0625rem), #7e7e7e 2.5rem),
+        -webkit-linear-gradient(left, #fff calc(2.5rem - .0625rem), #7e7e7e 2.5rem);
+      background-size: 2.5rem 2.5rem;
+      background-position: center;
+      box-shadow: 0rem 0rem .75rem 0rem inset #000000ad;
 
       .animation-target {
-        border: .0625rem solid #425c89;
+        border: .0625rem solid #000000;
         margin: auto;
         border-radius: .875rem;
-        width: 18rem;
-        height: 18rem;
+        width: 12rem;
+        height: 12rem;
         background-color: #99c0e2;
         animation: identifier 2s cubic-bezier(.68, -0.55, .27, 1.55) alternate;
+        box-shadow: 0rem 0rem .75rem 0rem #000000;
 
       }
 
