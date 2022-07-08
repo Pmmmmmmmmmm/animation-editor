@@ -4,6 +4,6 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import 'normalize.css/normalize.css'
-import './assets/rem.js'
+import './utils/rem.ts'
 
 createApp(App).use(store).use(router).mount('#app')

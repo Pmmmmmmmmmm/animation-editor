@@ -9,20 +9,14 @@ import {
 } from 'vue'
 // import Bezier from '@/utils/Bezier.js'
 
+import TimePoint from './TimePoint.vue'
 const animation = reactive({
   alternate: false,
   duration: 0,
 })
 watch(animation, (val) => {
   console.log(val.duration);
-
 })
-
-
-
-
-
-
 // let animationString = ref('')
 // function insertStyleSheetRule(keyFrameText: string) {
 //   // let sheets = document.styleSheets
@@ -84,7 +78,10 @@ watch(animation, (val) => {
         <div class="btn">infinite</div>
         <div class="btn"></div>
       </div>
-      <div class="keyframe-setting"></div>
+      <div class="keyframe-setting">
+        <TimePoint />
+        <div class="style-list"></div>
+      </div>
     </div>
     <div class="show-box">
       <div class="background">
@@ -108,28 +105,28 @@ header {
   background-color: beige;
   display: flex;
   box-sizing: border-box;
-  gap: 2.4rem;
-  padding: 2.4rem;
+  gap: 1.25rem;
+  padding: 1.25rem;
 
   .setting-box {
     flex-grow: 1.8;
     display: flex;
     flex-direction: column;
-    gap: 2.4rem;
+    gap: 1.25rem;
 
     .animation-setting {
-      padding: 2.4rem;
+      padding: 1.25rem;
       border-radius: .875rem;
-      background-color: #fffbe8;
-      ;
+      background-color: #fff;
+      border: .0625rem #425c89 solid;
     }
 
     .keyframe-setting {
       flex: 1;
-      padding: 2.4rem;
+      padding: 1.25rem;
       border-radius: .875rem;
-      background-color: #fffbe8;
-      ;
+      background-color: #fff;
+      border: .0625rem #425c89 solid;
     }
   }
 
@@ -154,14 +151,14 @@ header {
       box-shadow: 0rem 0rem .75rem 0rem inset #000000ad;
 
       .animation-target {
-        border: .0625rem solid #000000;
+        border: .25rem solid #00288e93;
         margin: auto;
         border-radius: .875rem;
         width: 12rem;
         height: 12rem;
         background-color: #99c0e2;
-        animation: identifier 2s cubic-bezier(.68, -0.55, .27, 1.55) alternate;
-        box-shadow: 0rem 0rem .75rem 0rem #000000;
+        animation: identifier 2s cubic-bezier(.68, -0.55, .27, 1.55);
+
 
       }
 
@@ -171,9 +168,7 @@ header {
         }
 
         100% {
-          transform: rotateY(180deg);
-
-
+          transform: rotateY(360deg);
         }
       }
     }
